@@ -33,7 +33,7 @@ class EmployersListItem extends Component {
 
     if (rise) {
       classNames += ' like';
-  }
+    }
 
     return (
       <li className={classNames}>
