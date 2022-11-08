@@ -68,9 +68,11 @@ class App extends Component {
   };
 
   render() {
+    const employees = this.state.data.length;
+
     return (
       <div className="app">
-        <AppInfo />
+        <AppInfo employees={employees} />
         <div className="search-panel">
           <SearchPanel />
           <AppFilter />
