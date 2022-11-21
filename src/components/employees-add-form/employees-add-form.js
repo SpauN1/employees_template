@@ -19,7 +19,11 @@ class EmployeesAddForm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.onAdd(this.state.name, this.state.salary);
+    if (this.state.name === '' || this.state.salary === '') {
+      alert('Введите, пожалуйста, Имя и Зарплату сотрудника');
+    } else {
+      this.props.onAdd(this.state.name, this.state.salary);
+    }
     this.setState({
       name: '',
       salary: '',
@@ -28,6 +32,7 @@ class EmployeesAddForm extends Component {
 
   render() {
     const { name, salary } = this.state;
+
     return (
       <div className="app-add-form">
         <h3>Добавьте нового сотрудника</h3>
