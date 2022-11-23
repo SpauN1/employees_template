@@ -17,7 +17,8 @@ class EmployersListItem extends Component {
 
     return (
       <li className={classNames}>
-        <span className="list-group-item-label"
+        <span
+          className="list-group-item-label"
           onClick={onToggleProp}
           data-toggle="rise"
         >
@@ -38,11 +39,7 @@ class EmployersListItem extends Component {
             <i className="fas fa-cookie"></i>
           </button>
 
-          <button 
-            type="button" 
-            className="btn-trash btn-sm" 
-            onClick={onDelete}
-          >
+          <button type="button" className="btn-trash btn-sm" onClick={onDelete}>
             <i className="fas fa-trash"></i>
           </button>
           <i className="fas fa-star"></i>
