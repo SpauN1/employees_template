@@ -1,4 +1,4 @@
-import './employees-list-item.css';
+import './employees-list-item.scss';
 
 const EmployersListItem = (props) => {
   const { name, salary, onDelete, onToggleProp, increase, rise, changeSalary } =
