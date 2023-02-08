@@ -9,19 +9,16 @@ import EmployeesAddForm from '../employees-add-form/employees-add-form';
 import './app.scss';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [
-        { name: 'Андрей П.', salary: 1600, increase: false, rise: true, id: 1 },
-        { name: 'Михаил Т', salary: 800, increase: true, rise: false, id: 2 },
-        { name: 'Иван В.', salary: 1100, increase: false, rise: false, id: 3 },
-      ],
-      term: '',
-      filter: 'all',
-    };
-    this.maxId = 4;
-  }
+  state = {
+    data: [
+      { name: 'Андрей П.', salary: 1600, increase: false, rise: true, id: 1 },
+      { name: 'Михаил Т', salary: 800, increase: true, rise: false, id: 2 },
+      { name: 'Иван В.', salary: 1100, increase: false, rise: false, id: 3 },
+    ],
+    term: '',
+    filter: 'all',
+  };
+  maxId = 4;
 
   deleteItem = (id) => {
     this.setState(({ data }) => {
@@ -103,7 +100,10 @@ class App extends Component {
     const { data, term, filter } = this.state;
     const employees = this.state.data.length;
     const increased = this.state.data.filter((item) => item.increase).length;
-    const visibleData = this.filterPost(this.searchEmployees(data, term), filter);
+    const visibleData = this.filterPost(
+      this.searchEmployees(data, term),
+      filter
+    );
     return (
       <div className="app">
         <AppInfo employees={employees} increased={increased} />
